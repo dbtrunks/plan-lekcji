@@ -19,7 +19,7 @@ const timetable = [
     time: "9:50-10:35",
     poniedziałek: "📖Edukacja wczesnoszkolna",
     wtorek: "📖Edukacja wczesnoszkolna",
-    środa: "🏀WF",
+    środa: "📖Edukacja wczesnoszkolna",
     czwartek: "",
     piątek: ""
   },
@@ -36,7 +36,7 @@ const timetable = [
     poniedziałek: "",
     wtorek: "✟Religia",
     środa: "",
-    czwartek: "🗽j. angielski",
+    czwartek: "🏀WF",
     piątek: "📖Edukacja wczesnoszkolna"
   },
     {
@@ -52,15 +52,15 @@ const timetable = [
     poniedziałek: "",
     wtorek: "",
     środa: "",
-    czwartek: "📖Edukacja wczesnoszkolna",
-    piątek: "🎨Zajęcia rozwijające uzdolnienia"
+    czwartek: "🗽j. angielski",
+    piątek: "📖Edukacja wczesnoszkolna"
   },
         {
     time: "14:45-15:30",
     poniedziałek: "",
     wtorek: "",
     środa: "",
-    czwartek: "📖Edukacja wczesnoszkolna",
+    czwartek: "🎨Zajęcia rozwijające uzdolnienia",
     piątek: "🏀WF"
   },
  {
