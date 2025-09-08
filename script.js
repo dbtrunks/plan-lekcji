@@ -44,8 +44,8 @@ const timetable = [
     poniedziałek: "",
     wtorek: "",
     środa: "",
-    czwartek: "📖Edukacja wczesnoszkolna",
-    piątek: "📖Edukacja wczesnoszkolna"
+    czwartek: "📖Edukacja wczesnoszkolna +🍴obiad",
+    piątek: "📖Edukacja wczesnoszkolna +🍴obiad"
   },
       {
     time: "13:50-14:35",
@@ -97,16 +97,16 @@ timetable.forEach(row => {
 });
 
 
-for(let row of tableBody.rows) {
-  var time = row.cells[0].innerHTML
-    if(time == '11:40-12:25'){
-          tableBody.rows[row.rowIndex].insertAdjacentHTML('beforebegin', "<tr class='doubleBorders'><td></td><td colspan=5>Przerwa obiadowa  I</td></tr>");
-    }else
-  if(time == '12:45-13:30'){
-    tableBody.rows[row.rowIndex].insertAdjacentHTML('beforebegin', "<tr class='doubleBorders'><td></td><td colspan=5>Przerwa obiadowa  II </td></tr>");
-  }
-
-}
+//for(let row of tableBody.rows) {
+//  var time = row.cells[0].innerHTML
+//    if(time == '11:40-12:25'){
+//          tableBody.rows[row.rowIndex].insertAdjacentHTML('beforebegin', "<tr class='doubleBorders'><td></td><td colspan=5>Przerwa obiadowa  I</td></tr>");
+//    }else
+//  if(time == '12:45-13:30'){
+//    tableBody.rows[row.rowIndex].insertAdjacentHTML('beforebegin', "<tr class='doubleBorders'><td></td><td colspan=5>Przerwa obiadowa  II </td></tr>");
+//  }
+//
+//}
 
 
 
