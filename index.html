@@ -4,19 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Plan Lekcji</title>
+  <link rel="icon" href="img/icon.png">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-  
- <table class="head">
-  <tr>
-    <td><img src="img03.png" /></td>
-    <td>  <h1>📚 Plan Lekcji Mikołaja</h1>
-    <h4>rok szkolny 2025/2026</h4></td>
-    <td style="width:150px"><p>📆</p><p id="time"></p></td>
-  </tr>
- </table> 
+
+    <div id="head" class="rows">
+      <div class="column">
+        <img src="img/img03.png" />
+      </div>
+      <div class="column">
+      <h1>📚 Plan Lekcji Mikołaja</h1>
+        <h4>rok szkolny 2025/2026</h4>
+      </div>
+      <div class="column">
+        <p>📆</p><p id="time"></p>
+      </div>
+    </div>
+
    <table id="timetable">
       <thead class="head">
         <tr>
@@ -32,8 +38,22 @@
         <!-- Wypełniane przez JavaScript -->
       </tbody>
     </table>
-		 <!-- <img src="img01.png" />-->
-			<img src="img02.png" />
+    <div class="rows">
+      <div class="column">
+          Przerwy obiadowe:
+          <br>pon: 12:50-13:10
+          <br>wt : 12:50-13:10
+          <br>śr : 12:00-12:20
+          <br>czw: 12:50-13:10
+          <br>pt : 12:50-13:10
+      </div>
+      <div class="column">
+        <img src="img/img02.png" />
+      </div>
+      <div class="column">
+      </div>
+    </div>
+
   </div>
   <script src="script.js"></script>
 

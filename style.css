@@ -16,7 +16,7 @@ footer {
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-
+  text-align: center;
 }
 
 h1 {
@@ -65,27 +65,30 @@ tr:nth-child(even) {
          background-color: #96D4D4;
 }
 
-
 img {
   display: block;
   margin: auto;
 
 }
 
-#time{
-    text-align: right;
-}
-
-.left {
-    float:left;
-    width: 33.3%
-}
 p{
   font-size: 34px;
 }
 
-.head td{
+#head{
   border: 0px;
-  height: 250px;
+  height: 230px;
   
+}
+
+.rows{
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  letter-spacing: 1px;
+  font-family: "Noto Sans Mono", monospace;
+}
+.column{
+  width: 33%;
 }
