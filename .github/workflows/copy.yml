@@ -1,0 +1,24 @@
+name: .NET
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Copy files
+      uses: appleboy/scp-action@v1
+      with:
+         host: ${{ secrets.HOST }}
+         username: ${{ secrets.USER }}
+         key: ${{ secrets.SSH_KEY }}
+         port: 10411
+         source: "./source"
+         target: "/var/www/plan-lekcji"
