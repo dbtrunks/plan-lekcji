@@ -71,6 +71,14 @@ const timetable = [
     czwartek: "",
     piątek: ""
   },
+  {
+    time: "16:00-17:00",
+    poniedziałek: "🥋Judo",
+    wtorek: "",
+    środa: "🥋Judo",
+    czwartek: "",
+    piątek: ""
+  },
    {
     time: "17:00-18:00",
     poniedziałek: "",
