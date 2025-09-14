@@ -19,5 +19,5 @@ jobs:
          username: ${{ secrets.USER }}
          key: ${{ secrets.SSH_KEY }}
          port: 10411
-         source: "./source"
+         source: "./source/"
          target: "/var/www/plan-lekcji"
