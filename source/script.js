@@ -153,7 +153,7 @@ function compareTime(str1, str2){
     var time2 = str2.split(':');
     if(eval(time1[0]) > eval(time2[0])){
         return true;
-    } else if(eval(time1[0]) == eval(time2[0]) && eval(time1[1]) > eval(time2[1])) {
+    } else if(eval(time1[0]) == eval(time2[0]) && eval(time1[1]) >= eval(time2[1])) {
         return true;
     } else {
         return false;
