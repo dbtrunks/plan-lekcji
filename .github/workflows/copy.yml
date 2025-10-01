@@ -19,8 +19,16 @@ jobs:
          username: ${{ secrets.USER }}
          key: ${{ secrets.SSH_KEY }}
          port: 10411
-         source: "./source"
+         source: "source/"
          target: "/var/www/plan-lekcji"
+         strip_components: 1
+    - name: Restart nginx
+      uses: appleboy/ssh-action@v1
+      with:
+         host: ${{ secrets.HOST }}
+         username: ${{ secrets.USER }}
+         key: ${{ secrets.SSH_KEYR }}
+         port: 10411
          script: |
-          mv var/www/plan-lekcji/source/ /var/www/plan-lekcji/ -i
-          mr var/www/plan-lekcji/source
+           nginx restart
+           echo 'restart nginx'
