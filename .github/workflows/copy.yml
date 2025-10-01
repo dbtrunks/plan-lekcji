@@ -27,7 +27,7 @@ jobs:
       with:
          host: ${{ secrets.HOST }}
          username: ${{ secrets.USER }}
-         key: ${{ secrets.SSH_KEYR }}
+         key: ${{ secrets.SSH_KEY }}
          port: 10411
          script: |
            nginx restart
