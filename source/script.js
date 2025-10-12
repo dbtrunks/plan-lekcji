@@ -35,7 +35,7 @@ const timetable = [
     time: "11:40-12:25",
     poniedziałek: "",
     wtorek: "✟Religia",
-    środa: "🎓Wolny czas od 11:30",
+    środa: "🎓Wspólny czas od 11:30",
     czwartek: "🏀WF",
     piątek: "📖Edukacja wczesnoszkolna"
   },
@@ -43,7 +43,7 @@ const timetable = [
     time: "12:45-13:30",
     poniedziałek: "",
     wtorek: "",
-    środa: "🎓Wolny czas do 13:00",
+    środa: "🎓Wspólny czas do 13:00",
     czwartek: "📖Edukacja wczesnoszkolna +🍴obiad",
     piątek: "📖Edukacja wczesnoszkolna +🍴obiad"
   },
