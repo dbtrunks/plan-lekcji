@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Licznik odliczania</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0D1B2A;
+      --sand:   #E8D5B0;
+      --teal:   #4ECDC4;
+      --white:  #F7F9FC;
+      --overlay: rgba(13, 27, 42, 0.62);
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Inter', sans-serif;
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    /* â”€â”€â”€ HERO â”€â”€â”€ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem 3rem;
+      overflow: hidden;
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80');
+      background-size: cover;
+      background-position: center 40%;
+      transform: scale(1.06);
+      transition: transform 12s ease-out;
+    }
+    .hero__bg.loaded { transform: scale(1); }
+
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: var(--overlay);
+    }
+
+    /* â”€â”€â”€ CONTENT â”€â”€â”€ */
+    .content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 860px;
+      width: 100%;
+    }
+
+    .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1.1rem;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    h1 span {
+      color: var(--sand);
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(247,249,252,0.72);
+      margin-bottom: 3rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* â”€â”€â”€ IMAGE CARD â”€â”€â”€ */
+    .img-card {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 2.4rem;
+      border: 3px solid var(--teal);
+      box-shadow: 0 0 0 6px rgba(78,205,196,0.15);
+    }
+
+    .img-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* â”€â”€â”€ COUNTDOWN â”€â”€â”€ */
+    .countdown {
+      display: flex;
+      gap: clamp(0.8rem, 3vw, 2rem);
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2.6rem;
+    }
+
+    .unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .digit-box {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(78,205,196,0.3);
+      border-radius: 14px;
+      padding: 1rem 1.4rem;
+      min-width: 100px;
+      backdrop-filter: blur(8px);
+      transition: border-color 0.3s, transform 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .digit-box::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      top: 50%;
+      height: 1px;
+      background: rgba(78,205,196,0.18);
+    }
+
+    .digit-box:hover {
+      border-color: var(--teal);
+      transform: translateY(-4px);
+    }
+
+    .digit {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.6rem, 6vw, 4rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+      display: block;
+      transition: transform 0.15s;
+    }
+
+    .digit.bump {
+      animation: bump 0.25s ease;
+    }
+
+    @keyframes bump {
+      0%   { transform: translateY(-6px); opacity: 0.6; }
+      100% { transform: translateY(0);    opacity: 1;   }
+    }
+
+    .label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+
+    /* â”€â”€â”€ TARGET DATE EDITOR â”€â”€â”€ */
+    .date-picker-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .date-picker-wrap label {
+      font-size: 0.8rem;
+      color: rgba(247,249,252,0.55);
+      letter-spacing: 0.08em;
+    }
+
+    input[type="date"] {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(78,205,196,0.35);
+      border-radius: 8px;
+      color: var(--sand);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      padding: 0.45rem 0.9rem;
+      cursor: pointer;
+      outline: none;
+      transition: border-color 0.25s;
+    }
+
+    input[type="date"]:focus,
+    input[type="date"]:hover {
+      border-color: var(--teal);
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      filter: invert(1) opacity(0.5);
+      cursor: pointer;
+    }
+
+    /* â”€â”€â”€ PAST MESSAGE â”€â”€â”€ */
+    .past-msg {
+      display: none;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--sand);
+      margin-bottom: 2.6rem;
+    }
+
+    /* â”€â”€â”€ FOOTER â”€â”€â”€ */
+    footer {
+      position: relative;
+      z-index: 2;
+      margin-top: 3.5rem;
+      font-size: 0.72rem;
+      color: rgba(247,249,252,0.28);
+      letter-spacing: 0.06em;
+    }
+
+    @media (max-width: 520px) {
+      .digit-box { min-width: 72px; padding: 0.8rem 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero__bg" id="heroBg"></div>
+  <div class="hero__overlay"></div>
+
+  <div class="content">
+
+    <div class="img-card">
+      <img
+        src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=300&q=80"
+        alt="PlaĹĽa o zachodzie sĹ‚oĹ„ca"
+      />
+    </div>
+
+    <h1>Do rozpoczÄ™cia<span id="eventName"> roku szkolnego</span> pozostaĹ‚o</h1>
+    <p class="subtitle">   </p>
+    <!-- Countdown -->
+    <div class="countdown" id="countdown">
+      <div class="unit">
+        <div class="digit-box"><span class="digit" id="d-days">--</span></div>
+        <span class="label">Dni</span>
+      </div>
+      <div class="unit">
+        <div class="digit-box"><span class="digit" id="d-hours">--</span></div>
+        <span class="label">Godziny</span>
+      </div>
+      <div class="unit">
+        <div class="digit-box"><span class="digit" id="d-mins">--</span></div>
+        <span class="label">Minuty</span>
+      </div>
+      <div class="unit">
+        <div class="digit-box"><span class="digit" id="d-secs">--</span></div>
+        <span class="label">Sekundy</span>
+      </div>
+    </div>
+    <p class="subtitle">KaĹĽdy dzieĹ„ przybliĹĽa CiÄ™ do nowych wyzwaĹ„</p>
+    <p class="past-msg" id="pastMsg">Rok szkolny juĹĽ siÄ™ rozpoczÄ…!</p>
+
+  </div>
+
+</section>
+
+<script>
+  const today = new Date();
+  let defaultYear = today.getFullYear();
+  const defaultTarget = `${defaultYear}-09-01`;
+
+  setTimeout(() => document.getElementById('heroBg').classList.add('loaded'), 50);
+
+  const els = {
+    days:  document.getElementById('d-days'),
+    hours: document.getElementById('d-hours'),
+    mins:  document.getElementById('d-mins'),
+    secs:  document.getElementById('d-secs'),
+  };
+  const countdown = document.getElementById('countdown');
+  const pastMsg   = document.getElementById('pastMsg');
+
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  function setDigit(el, val) {
+    if (el.textContent !== val) {
+      el.textContent = val;
+      el.classList.remove('bump');
+      void el.offsetWidth;           // reflow to restart animation
+      el.classList.add('bump');
+    }
+  }
+
+  function update() {
+    const target = new Date(defaultTarget + 'T08:00:00');
+    const now    = new Date();
+    const diff   = target - now;
+
+    if (isNaN(diff)) return;
+
+    if (diff <= 0) {
+      countdown.style.display = 'none';
+      pastMsg.style.display   = 'block';
+      return;
+    }
+
+    countdown.style.display = 'flex';
+    pastMsg.style.display   = 'none';
+
+    const totalSecs = Math.floor(diff / 1000);
+    const secs  = totalSecs % 60;
+    const mins  = Math.floor(totalSecs / 60) % 60;
+    const hours = Math.floor(totalSecs / 3600) % 24;
+    const days  = Math.floor(totalSecs / 86400);
+
+    setDigit(els.days,  pad(days));
+    setDigit(els.hours, pad(hours));
+    setDigit(els.mins,  pad(mins));
+    setDigit(els.secs,  pad(secs));
+  }
+
+  update();
+  setInterval(update, 1000);
+</script>
+</body>
+</html>
