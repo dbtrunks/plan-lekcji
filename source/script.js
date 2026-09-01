@@ -1,67 +1,67 @@
 const timetable = [
   {
     time: "8:00-8:45",
-    poniedziałek: "📖Edukacja wczesnoszkolna",
-    wtorek: "📖Edukacja wczesnoszkolna",
-    środa: "📖Edukacja wczesnoszkolna",
-    czwartek: "",
-    piątek: ""
+    poniedziałek: "",
+    wtorek: "",
+    środa: "🗽j. angielski",
+    czwartek: "📖Edukacja wczesnoszkolna",
+    piątek: "📖Edukacja wczesnoszkolna"
   },
   {
     time: "8:55-9:40",
-    poniedziałek: "📖Edukacja wczesnoszkolna",
-    wtorek: "📖Edukacja wczesnoszkolna",
+    poniedziałek: "",
+    wtorek: "",
     środa: "📖Edukacja wczesnoszkolna",
-    czwartek: "",
-    piątek: ""
+    czwartek: "📖Edukacja wczesnoszkolna",
+    piątek: "📖Edukacja wczesnoszkolna"
   },
   {
     time: "9:50-10:35",
-    poniedziałek: "📖Edukacja wczesnoszkolna",
-    wtorek: "📖Edukacja wczesnoszkolna",
+    poniedziałek: "",
+    wtorek: "",
     środa: "📖Edukacja wczesnoszkolna",
-    czwartek: "",
-    piątek: ""
+    czwartek: "📖Edukacja wczesnoszkolna",
+    piątek: "📖Edukacja wczesnoszkolna"
   },
   {
     time: "10:45-11:30",
-    poniedziałek: "🏀WF",
-    wtorek: "📖Edukacja wczesnoszkolna",
-    środa: "📖Edukacja wczesnoszkolna",
-    czwartek: "",
-    piątek: "🗽j. angielski"
+    poniedziałek: "",
+    wtorek: "",
+    środa: "🏊Basen",
+    czwartek: "🗽j. angielski",
+    piątek: "🏀WF"
   },
     {
     time: "11:40-12:25",
-    poniedziałek: "",
-    wtorek: "✟Religia",
-    środa: "🎓Wspólny czas od 11:30",
-    czwartek: "🏀WF",
-    piątek: "📖Edukacja wczesnoszkolna"
+    poniedziałek: "🏀WF",
+    wtorek: "📖Edukacja wczesnoszkolna",
+    środa: "🏊Basen",
+    czwartek: "🖥️Komputerowa",
+    piątek: "✟Religia"
   },
     {
     time: "12:45-13:30",
-    poniedziałek: "",
-    wtorek: "",
-    środa: "🎓Wspólny czas do 13:00",
-    czwartek: "📖Edukacja wczesnoszkolna +🍴obiad",
-    piątek: "📖Edukacja wczesnoszkolna +🍴obiad"
+    poniedziałek: "📖Edukacja wczesnoszkolna",
+    wtorek: "📖Edukacja wczesnoszkolna ",
+    środa: "",
+    czwartek: "",
+    piątek: ""
   },
       {
     time: "13:50-14:35",
-    poniedziałek: "",
-    wtorek: "",
+    poniedziałek: "📖Edukacja wczesnoszkolna",
+    wtorek: "📖Edukacja wczesnoszkolna",
     środa: "",
-    czwartek: "🗽j. angielski",
-    piątek: "📖Edukacja wczesnoszkolna"
+    czwartek: "",
+    piątek: ""
   },
         {
     time: "14:45-15:30",
-    poniedziałek: "",
-    wtorek: "",
+    poniedziałek: "📖Edukacja wczesnoszkolna",
+    wtorek: "🎨Zajęcia rozwijające uzdolnienia",
     środa: "",
-    czwartek: "🎨Zajęcia rozwijające uzdolnienia",
-    piątek: "🏀WF"
+    czwartek: "",
+    piątek: ""
   },
  {
     time: "",
@@ -84,7 +84,7 @@ const timetable = [
     poniedziałek: "",
     wtorek: "",
     środa: "",
-    czwartek: "🏊Lekcja pływania",
+    czwartek: "",
     piątek: ""
   }
 ];
