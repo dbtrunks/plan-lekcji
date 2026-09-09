@@ -1,1 +1,2 @@
-Plan lekcji na rok 2025/2026
+Plan lekcji na rok 2026/2027
+

@@ -18,14 +18,14 @@ const timetable = [
   {
     time: "9:50-10:35",
     poniedziałek: "",
-    wtorek: "",
+    wtorek: "Wyrównawcze",
     środa: "📖Edukacja wczesnoszkolna",
     czwartek: "📖Edukacja wczesnoszkolna",
     piątek: "📖Edukacja wczesnoszkolna"
   },
   {
     time: "10:45-11:30",
-    poniedziałek: "",
+    poniedziałek: "Wyrównawcze",
     wtorek: "",
     środa: "🏊Basen",
     czwartek: "🗽j. angielski",
