@@ -1,8 +1,16 @@
 const timetable = [
   {
-    time: "8:00-8:45",
+    time: "7:00-8:55",
     poniedziałek: "",
     wtorek: "",
+    środa: "",
+    czwartek: "Zajęcia rew.",
+    piątek: ""
+  },
+  {
+    time: "8:00-8:45",
+    poniedziałek: "",
+    wtorek: "Zajęcia rew. od 8:40",
     środa: "🗽j. angielski",
     czwartek: "📖Edukacja wczesnoszkolna",
     piątek: "📖Edukacja wczesnoszkolna"
@@ -10,7 +18,7 @@ const timetable = [
   {
     time: "8:55-9:40",
     poniedziałek: "",
-    wtorek: "",
+    wtorek: "Zajęcia rew.",
     środa: "📖Edukacja wczesnoszkolna",
     czwartek: "📖Edukacja wczesnoszkolna",
     piątek: "📖Edukacja wczesnoszkolna"
@@ -44,7 +52,7 @@ const timetable = [
     poniedziałek: "📖Edukacja wczesnoszkolna",
     wtorek: "📖Edukacja wczesnoszkolna ",
     środa: "",
-    czwartek: "",
+    czwartek: "Zajęcia rew.",
     piątek: ""
   },
       {
