@@ -1,6 +1,6 @@
 const timetable = [
   {
-    time: "7:00-8:55",
+    time: "7:00-8:00",
     poniedziałek: "",
     wtorek: "",
     środa: "",
