@@ -99,31 +99,40 @@ const timetable = [
 
 const tableBody = document.getElementById("tableBody");
 
+//timetable.forEach(row => {
+//  const tr = document.createElement("tr");
+//  tr.innerHTML = `
+//    <td>${row.time}</td>
+//    <td>${row.poniedziałek}</td>
+//    <td>${row.wtorek}</td>
+//    <td>${row.środa}</td>
+//    <td>${row.czwartek}</td>
+//    <td>${row.piątek}</td>
+//  `;
+//  tableBody.appendChild(tr);
+//});
+
+
+const days = ["poniedziałek", "wtorek", "środa", "czwartek", "piątek"];
+
 timetable.forEach(row => {
   const tr = document.createElement("tr");
-  tr.innerHTML = `
-    <td>${row.time}</td>
-    <td>${row.poniedziałek}</td>
-    <td>${row.wtorek}</td>
-    <td>${row.środa}</td>
-    <td>${row.czwartek}</td>
-    <td>${row.piątek}</td>
-  `;
+
+  // Dodajemy pierwszą komórkę z czasem
+  let rowHTML = `<td>${row.time}</td>`;
+
+  // Iterujemy po dniach tygodnia i sprawdzamy zawartość frazy
+  days.forEach(day => {
+    const text = row[day];
+    const hasRew = text.includes("Zajęcia rew.");
+    const className = hasRew ? " class='grapeBorders'" : "";
+    
+    rowHTML += `<td${className}>${text}</td>`;
+  });
+
+  tr.innerHTML = rowHTML;
   tableBody.appendChild(tr);
 });
-
-
-//for(let row of tableBody.rows) {
-//  var time = row.cells[0].innerHTML
-//    if(time == '11:40-12:25'){
-//          tableBody.rows[row.rowIndex].insertAdjacentHTML('beforebegin', "<tr class='doubleBorders'><td></td><td colspan=5>Przerwa obiadowa  I</td></tr>");
-//    }else
-//  if(time == '12:45-13:30'){
-//    tableBody.rows[row.rowIndex].insertAdjacentHTML('beforebegin', "<tr class='doubleBorders'><td></td><td colspan=5>Przerwa obiadowa  II </td></tr>");
-//  }
-//
-//}
-
 
 
 var x = setInterval(function() {
