@@ -33,7 +33,7 @@ const timetable = [
   },
   {
     time: "10:45-11:30",
-    poniedziałek: "Wyrównawcze",
+    poniedziałek: "",
     wtorek: "",
     środa: "🏊Basen",
     czwartek: "🗽j. angielski",
@@ -51,7 +51,7 @@ const timetable = [
     time: "12:45-13:30",
     poniedziałek: "📖Edukacja wczesnoszkolna",
     wtorek: "📖Edukacja wczesnoszkolna ",
-    środa: "",
+    środa: "Wyrównawcze",
     czwartek: "Zajęcia rew.",
     piątek: ""
   },
