@@ -125,8 +125,11 @@ timetable.forEach(row => {
   days.forEach(day => {
     const text = row[day];
     const hasRew = text.includes("Zajęcia rew.");
-    const className = hasRew ? " class='grapeBorders'" : "";
-    
+    let className = hasRew ? " class='grapeBorders'" : "";
+
+    const hasWyr = text.includes("Wyrównawcze");
+    className = hasWyr ? " class='geenBorders'" : className;
+   
     rowHTML += `<td${className}>${text}</td>`;
   });
 
