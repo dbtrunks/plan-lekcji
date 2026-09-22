@@ -34,7 +34,7 @@ const timetable = [
   {
     time: "10:45-11:30",
     poniedziałek: "",
-    wtorek: "",
+    wtorek: "✨Etyka",
     środa: "🏊Basen",
     czwartek: "🗽j. angielski",
     piątek: "🏀WF"
