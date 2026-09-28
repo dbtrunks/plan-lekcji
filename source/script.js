@@ -4,13 +4,13 @@ const timetable = [
     poniedziałek: "",
     wtorek: "",
     środa: "",
-    czwartek: "Zajęcia rew.",
+    czwartek: "Zajęcia rew. M.CZ.",
     piątek: ""
   },
   {
     time: "8:00-8:45",
     poniedziałek: "",
-    wtorek: "Zajęcia rew. od 8:40",
+    wtorek: "Zajęcia rew. od 8:40 M.CZ.",
     środa: "🗽j. angielski",
     czwartek: "📖Edukacja wczesnoszkolna",
     piątek: "📖Edukacja wczesnoszkolna"
@@ -18,7 +18,7 @@ const timetable = [
   {
     time: "8:55-9:40",
     poniedziałek: "",
-    wtorek: "Zajęcia rew.",
+    wtorek: "Zajęcia rew. M.CZ.",
     środa: "📖Edukacja wczesnoszkolna",
     czwartek: "📖Edukacja wczesnoszkolna",
     piątek: "📖Edukacja wczesnoszkolna"
@@ -52,7 +52,7 @@ const timetable = [
     poniedziałek: "📖Edukacja wczesnoszkolna",
     wtorek: "📖Edukacja wczesnoszkolna ",
     środa: "Wyrównawcze",
-    czwartek: "Zajęcia rew.",
+    czwartek: "Zajęcia rew. L.R.",
     piątek: ""
   },
       {
@@ -61,7 +61,7 @@ const timetable = [
     wtorek: "📖Edukacja wczesnoszkolna",
     środa: "",
     czwartek: "",
-    piątek: ""
+    piątek: "Zajęcia grupowe A.W."
   },
         {
     time: "14:45-15:30",
@@ -72,15 +72,15 @@ const timetable = [
     piątek: ""
   },
  {
-    time: "",
+    time: "15:30-16:30",
     poniedziałek: "",
-    wtorek: "",
+    wtorek: "TUS E.J.",
     środa: "",
     czwartek: "",
     piątek: ""
   },
   {
-    time: "16:00-17:00",
+    time: "",
     poniedziałek: "",
     wtorek: "",
     środa: "",
@@ -115,6 +115,15 @@ const tableBody = document.getElementById("tableBody");
 
 const days = ["poniedziałek", "wtorek", "środa", "czwartek", "piątek"];
 
+	const dayName = new Date().toLocaleDateString('pl-PL', { weekday: 'long' });
+	const headers = document.querySelectorAll("th");
+
+	headers.forEach(th => {
+	  if (th.textContent.trim().toLowerCase() === dayName.toLowerCase()) {
+		th.classList.add("bold");
+	  }
+	});
+
 timetable.forEach(row => {
   const tr = document.createElement("tr");
 
@@ -124,12 +133,19 @@ timetable.forEach(row => {
   // Iterujemy po dniach tygodnia i sprawdzamy zawartość frazy
   days.forEach(day => {
     const text = row[day];
+	
     const hasRew = text.includes("Zajęcia rew.");
     let className = hasRew ? " class='grapeBorders'" : "";
 
     const hasWyr = text.includes("Wyrównawcze");
     className = hasWyr ? " class='geenBorders'" : className;
-   
+ 
+    const hasTus = text.includes("TUS");
+    className = hasTus ? " class='yellowBorders'" : className;
+
+    const hasGru = text.includes("grupowe");
+    className = hasGru ? " class='blueBorders'" : className;	
+	
     rowHTML += `<td${className}>${text}</td>`;
   });
 

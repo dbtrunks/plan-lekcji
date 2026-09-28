@@ -99,3 +99,16 @@ p{
 .geenBorders{
 	     background-color: #8AFF6078;
 }
+
+.yellowBorders{
+	     background-color: #FFDB58;
+}
+
+.blueBorders{
+	     background-color: #66D3FA;
+}
+
+.bold{
+		font-style: italic;
+		color: #d4ff3b;
+}
