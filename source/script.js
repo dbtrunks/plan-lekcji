@@ -60,7 +60,7 @@ const timetable = [
     poniedziałek: "📖Edukacja wczesnoszkolna",
     wtorek: "📖Edukacja wczesnoszkolna",
     środa: "",
-    czwartek: "",
+    czwartek: "🎈Wspólny czas",
     piątek: "Zajęcia grupowe A.W."
   },
         {
@@ -68,7 +68,7 @@ const timetable = [
     poniedziałek: "📖Edukacja wczesnoszkolna",
     wtorek: "🎨Zajęcia rozwijające uzdolnienia",
     środa: "",
-    czwartek: "",
+    czwartek: "🎈Wspólny czas do 15:35",
     piątek: ""
   },
  {
